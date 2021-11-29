@@ -1,0 +1,3 @@
+class UserLikeTour < ApplicationRecord
+
+end

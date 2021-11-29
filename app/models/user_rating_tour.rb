@@ -1,0 +1,3 @@
+class UserRatingTour < ApplicationRecord
+
+end
