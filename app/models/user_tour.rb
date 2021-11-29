@@ -1,0 +1,3 @@
+class UserTour < ApplicationRecord
+
+end
