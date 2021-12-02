@@ -13,12 +13,11 @@
 
   <body>
     <% if logged_in? %>
-           aaaaa
-           <%= link_to "Log out", logout_path, method: :delete %>
-          <% else %>
+        aaaaa
+      <%= link_to "Log out", logout_path, method: :delete %>
+      <% else %>
         bbb
-        <% end %>
-
+      <% end %>
     <%= render 'layouts/header' %>
     <%= yield %>
   </body>
