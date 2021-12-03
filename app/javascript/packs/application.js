@@ -9,7 +9,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
-require("bootstrap")
 import "../stylesheets/application";
 document.addEventListener("turbolinks:load", function() {
     $(function () {
@@ -21,22 +20,4 @@ document.addEventListener("turbolinks:load", function() {
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-import "./modernizr-3.5.0.min"
-import "./popper.min"
-import "./jquery.slicknav.min"
-import "./owl.carousel.min"
-import "./slick.min"
-import "./wow.min"
-import "./animated.headline"
-import "./jquery.magnific-popup"
-import "./jquery.scrollUp.min"
-import "./jquery.nice-select.min"
-import "./jquery.sticky"
-import "./contact"
-import "./jquery.form"
-import "./jquery.validate.min"
-import "./mail-script"
-import "./jquery.ajaxchimp.min"
-import "./plugins"
-import "./main"
+require("bootstrap")
