@@ -21,3 +21,9 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("bootstrap")
+
+import "./bootstrap.bundle.min"
+// import "./popper.min"
+import "./plugin"
+import "./jquery.mCustomScrollbar.concat.min"
+import "./custom"
