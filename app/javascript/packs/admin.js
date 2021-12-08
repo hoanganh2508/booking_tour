@@ -22,8 +22,6 @@ Turbolinks.start()
 ActiveStorage.start()
 require("bootstrap")
 
-import "./user/bootstrap.bundle.min"
-// import "./popper.min"
-import "./user/plugin"
-import "./user/jquery.mCustomScrollbar.concat.min"
-import "./user/custom"
+import "./admin/adminlte"
+import "./admin/bootstrap.bundle.min"
+import "./admin/dashboard3"
