@@ -18,7 +18,7 @@
           <%= image_tag "user2-160x160.jpg", class: "" %>
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Duy Bình</a>
         </div>
       </div>
 
@@ -39,22 +39,13 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
+          <li class="nav-item">
+            <a <%= link_to "Tours", admin_tours_path ,class:"nav-link"%> >
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+           <li class="nav-item">
+            <a <%= link_to "Categories", admin_categories_path ,class:"nav-link"%> >
+            </a>
           </li>
         </ul>
       </nav>

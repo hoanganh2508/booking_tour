@@ -24,4 +24,3 @@ require("bootstrap")
 
 import "./admin/adminlte"
 import "./admin/bootstrap.bundle.min"
-import "./admin/dashboard3"

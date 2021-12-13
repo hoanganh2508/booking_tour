@@ -1,0 +1,35 @@
+<h1>All Tours</h1>
+<hr>
+<%= will_paginate %>
+  <div class="button-tour">
+    <p><%= link_to "Tạo Tour", new_admin_tour_path %></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Ảnh</th>
+        <th>Số điện thoại</th>
+        <th>Giá</th>
+        <th>Nội dung</th>
+        <th>Xoá</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%#= render @tours %>
+      <% @tours.each_with_index do |tour, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to tour.name, edit_admin_tour_path(tour) %></td>
+          <td><%= image_tag tour.display_image if tour.image.attached? %></td>
+          <td><%= tour.phone_number %></td>
+          <td><%= tour.price %>vnđ</td>
+          <td><%= tour.content %></td>
+          <td><%= link_to "delete", [:admin, tour], method: :delete,
+                                          data: { confirm: "You sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate %>
