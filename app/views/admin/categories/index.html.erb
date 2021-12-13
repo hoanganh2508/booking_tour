@@ -1,0 +1,26 @@
+<h1>All categories</h1>
+<%= will_paginate %>
+  <div class="button-tour">
+    <p><%= link_to "Tạo Category", new_admin_category_path %></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Xoá</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%#= render @tours %>
+      <% @categories.each_with_index do |category, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to category.name, edit_admin_category_path(category) %></td>
+          <td><%= link_to "delete", [:admin, category], method: :delete,
+                                          data: { confirm: "You sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate %>
