@@ -36,7 +36,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
@@ -45,6 +45,15 @@
           </li>
            <li class="nav-item">
             <a <%= link_to "Categories", admin_categories_path ,class:"nav-link"%> >
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                <%= link_to "Manage Users", admin_users_path %>
+                <i class="right fas fa-angle-left"></i>
+              </p>
             </a>
           </li>
         </ul>
