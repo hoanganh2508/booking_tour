@@ -1,0 +1,38 @@
+<% provide(:title, 'All users') %>
+<h1>All Users</h1>
+<div class="line">
+
+</div>
+<%= will_paginate %>
+  <div class="button-tour">
+    <p><%= link_to "Tạo Tài Khoản", new_admin_user_path %></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Bank Balance</th>
+        <th>Xoá</th>
+        <th>Sửa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%#= render @tours %>
+      <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to user.name, admin_user_path(user) %></td>
+          <td><%= user.phone_number %></td>
+          <td><%= user.email %></td>
+          <td><%= user.bank_balance %>VNĐ</td>
+          <td><%= link_to "delete", [:admin, user], method: :delete,
+                                          data: { confirm: "You sure?" } %></td>
+          <td><%= link_to "edit", edit_admin_user_path(user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate %>
