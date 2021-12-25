@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="tourPanelHeading">
+            <h4>Tour tương tự</h4>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="horizontalLine2"></div>
+        </div>
+        <div class="col-sm-12">
+          <div class="media">
+            <span class="media-left">
+              <% image_path = @tour.image.attached? ? @tour.display_image : "default_tour_image.png" %>
+              <%= image_tag image_path , class:"image-rounded" %>
+            </span>
+            <div class="media-body">
+              <h4><%= @tour.name %>
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+              </h4>
+              <div class="col-sm-12 hotelItemReviews">
+                <span class="review-score">9.3</span>
+                <strong class="review-text">Tuyệt vời</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1 class="title">
+            <span class="hotel-name-detail"><%= @tour.name %></span>
+          </h1>
+          <div class="score-container" style="">
+            <span class="icon stars">
+              <i class="fa-solid fa-star star"></i>
+              <i class="fa-solid fa-star star"></i>
+              <i class="fa-solid fa-star star"></i>
+              <i class="fa-solid fa-star star"></i>
+            </span>
+            <span class="score-container__inner" data-original-title="Click để xem đánh giá">
+              <span class="score">8.9</span>
+              <span class="score-description">Rất tốt</span>
+              <span>| 366 đánh giá</span>
+            </span>
+          </div>
+          <div class="address description">
+            <i class="fa-solid fa-location-dot"></i>
+            <%= @tour.address %>
+          </div>
+        </div>
+        <div class="col-sm-4 tour-reservation">
+          <span class="price-description">Giá chỉ từ</span>
+          <p class="price">
+            <span class="ng-hide"><%= @tour.price %>
+              <span class="currency">VND</span>
+            </span>
+          </p>
+          <div class="have-price">
+            <button class="btn btn-block btn-action btn-book">Đặt ngay</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <% image_path = @tour.image.attached? ? @tour.display_image : "default_tour_image.png" %>
+          <%= image_tag image_path , class:"image-tour" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 combo" style="margin-top: 25px">
+          <h2 class="combo__heading">
+            <%= @tour.name %>
+          </h2>
+          <div class="col-sm-12 ">
+            <h4 class="combo-all">
+              <b>Combo bao gồm</b>
+              <br>
+              <%= @tour.content %>
+            </h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
