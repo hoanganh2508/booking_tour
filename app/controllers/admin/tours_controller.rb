@@ -17,7 +17,7 @@ class Admin::ToursController < Admin::AdminController
   end
 
   def index
-    @tours = Tour.paginate(page: params[:page])
+    @tours = Tour.paginate(page: params[:page], per_page: 15)
   end
 
   def edit
@@ -25,7 +25,7 @@ class Admin::ToursController < Admin::AdminController
 
   def update
     if @tour.update(tour_params)
-      flash[:success] = "Category updated"
+      flash[:success] = "Tour updated"
       redirect_to admin_tours_path
     else
       render 'edit'
@@ -45,6 +45,6 @@ class Admin::ToursController < Admin::AdminController
   end
 
   def tour_params
-    params.require(:tour).permit(:name,:address,:phone_number,:price,:content,:image)
+    params.require(:tour).permit(:name,:address,:phone_number,:price,:content,:image,:category_id,:duration)
   end
 end

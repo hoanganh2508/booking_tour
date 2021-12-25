@@ -81,7 +81,6 @@ body {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
-
 .vremovePadding-min-md {
     padding-left: 15px;
     padding-right: 15px;
@@ -268,5 +267,33 @@ body {
 .hotelItemReviews .review-text {
     color: #9FC43A;
     font-weight: bold;
+}
+.vcolor-info {
+  font-size: 22px;
+  font-weight: bold;
+  float: right;
+  color: #00C1DE;
+}
+.vcolor-info .textCurrency {
+  font-size: 13px;
+  font-weight: initial;
+}
+.tour_image {
+  width: 100%;
+  height: 200px;
+}
+.localHeadLine {
+  width: 100%;
+  height: 70px;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  border-bottom: 2px solid #003C71;
+}
+.localHeadLine p {
+  line-height: 105px;
+}
+.footer {
+  margin-top: 0 !important;
 }
 

@@ -24,7 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'active_storage_validations'
 gem 'image_processing'
 gem 'mini_magick'
-gem 'will_paginate', '3.1.8'
+gem 'will_paginate'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'dotenv-rails'
 # Use Active Storage variant
