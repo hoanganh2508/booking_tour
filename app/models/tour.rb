@@ -4,6 +4,8 @@ class Tour < ApplicationRecord
   validates :phone_number, presence: true, length: { maximum: 20 }
   validates :content, presence: true, length: { maximum: 1000 }
   has_one_attached :image
+
+  scope :same_location, -> (location) {where("address LIKE ?", "%#{location}%")}
   def display_image
     image.variant(resize_to_limit: [500, 500])
   end

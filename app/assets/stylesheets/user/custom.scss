@@ -82,3 +82,191 @@ body {
     border: solid 1px #BA68C8
 }
 
+.vremovePadding-min-md {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.nopadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+    display: table;
+    content: " ";
+}
+.hotel-header .hotel-information {
+    padding-right: 0px;
+    letter-spacing: -0.2px;
+    float: left;
+}
+.hotel-header .hotel-information .title {
+    line-height: 1.25;
+    color: #003C71;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.hotel-header .hotel-information .score-container {
+    cursor: pointer;
+}
+.v-margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.no-padding {
+    padding: 0px;
+}
+.title {
+    line-height: 1.25;
+    color: #003C71;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+.score-container{
+    margin-bottom: 10px;
+}
+.score-container .score {
+    padding: 3px 5px;
+    border-radius: 6px;
+    background: #9FC43A;
+    color: white;
+    font-weight: bold;
+}
+.score-container .score-description {
+    color: #9FC43A;
+    font-weight: bold;
+}
+.star {
+    color: #F79321;
+    top: 0px;
+}
+
+.tour-reservation {
+  text-align: right;
+}
+.price {
+    font-size: 20px;
+    margin-bottom: 5px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #26BED6;
+}
+
+.price .currency {
+  font-size: 14px;
+}
+.btn.btn-action {
+  transition: all .2s ease-in-out;
+    background: #F79321;
+    border: 1px solid #F79321;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px;
+    width: 75%;
+}
+.image-tour{
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+.combo {
+    background: #feeec5;
+    color: #555863;
+    border: 1px solid #fde29d;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-radius: 0px 0px 4px 4px;
+    border-top: 0px solid transparent;
+}
+.row {
+  --bs-gutter-x: none !important;
+}
+.combo__heading {
+    color: #3d3f47;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.combo-all {
+    margin-left: 20px;
+    color: #555863;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.combo-all b{
+  line-height: 1.1;
+  font-size: 18px;
+  font-weight: bold;
+}
+.tourPanelHeading h4 {
+  line-height: 1.5;
+    font-size: 16px;
+    font-weight: bold;
+    color: #003C71;
+}
+
+.horizontalLine2 {
+    margin-top: 10px;
+    margin-bottom: 10p
+}
+
+.image-rounded {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+.media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+.media-body h4 {
+    color: #003C71;
+    font-size: 15px;
+    width: 225px;
+    margin: 0;
+}
+.media-body i{
+    position: relative;
+    top: 4px;
+    color: #F79321;
+}
+.media-left {
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: top;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.hotelItemReviews {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5
+}
+.hotelItemReviews .review-score {
+    font-size: 14px;
+    background-color: #9FC43A;
+    border-radius: 4px;
+    padding: 0px 4px;
+    color: #FFFFFF;
+    display: inline-block;
+}
+.hotelItemReviews .review-text {
+    color: #9FC43A;
+    font-weight: bold;
+}
+
