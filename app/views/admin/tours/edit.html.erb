@@ -22,6 +22,8 @@
         <%= f.label :content %>
         <%= f.text_area :content, class: 'form-control' %>
         <br>
+        <%= f.label :category_id %>
+        <%= f.select :category_id, Category.pluck(:name, :id) , class: 'form-control' %>
         <%= f.submit "Update tour", class: "btn btn-primary" %>
         <span class="image">
           <%= f.file_field :image %>
