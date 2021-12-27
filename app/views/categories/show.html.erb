@@ -1,0 +1,47 @@
+<div class="content-wrapper" style="min-height: 457px; background-color: #ecf0f4">
+  <div class="container" style="padding-left: 90px;padding-right: 90px;">
+    <div class="localHeadLine hasLine text_color">
+      <h1 class="text_color">
+        <%= @category.name %>
+      </h1>
+    </div>
+    <% @category.tours.each do |tour| %>
+      <div class="row">
+        <div class="col-12">
+          <div class="card flex-row flex-wrap cardContent">
+            <div class="img_box">
+              <div style="margin: 15px 5%;">
+                <% image_path = tour.image.attached? ? tour.display_image : "default_tour_image.png" %>
+                <%= image_tag image_path , class:"category_image" %>
+              </div>
+            </div>
+            <div class="text_box">
+              <div class="textFix">
+                <%= link_to tour.name , tour %>
+              </div>
+              <div class="textDuration">
+                <%= tour.duration %>
+              </div>
+              <div style="color: #F79321;">
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+                <i class="fa-solid fa-star same"></i>
+              </div>
+              <div class="hotelItemReviews" style="margin-top: 10px;">
+                <span class="review-score">9.3</span>
+                <strong class="review-text">Tuyệt vời</strong>
+              </div>
+            </div>
+            <div class="price_box">
+              <div class="textPrice">
+                <span><%= tour.price %></span>
+                <span style="font-size: 17px">VNĐ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

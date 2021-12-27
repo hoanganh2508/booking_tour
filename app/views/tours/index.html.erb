@@ -1,33 +1,35 @@
 <div class="content-wrapper" style="min-height: 457px; background-color: #ecf0f4">
   <div class="container" style="padding-left: 90px;padding-right: 90px;">
     <% @categories.each do |category| %>
-      <div class="localHeadLine hasLine" style="color: #003C71;">
+      <div class="localHeadLine hasLine text_color">
         <div style="float: left">
-          <h1 style="color: #003C71; ">
-            <%= category.name %>
+          <h1>
+            <%= link_to category.name, category, class:"text_color" %>
           </h1>
         </div>
-        <div style="float: right">
-          <p>Xem thêm tour</p>
+        <div style="float: right;">
+          <p><%= link_to "Xem thêm tour", category, class:"text_color text_fix" %></p>
         </div>
       </div>
       <div class="row">
         <% category.tours.limit(6).each do |tour|%>
           <div class="col-md-4">
-            <div class="card" style="margin-bottom: 15px">
-              <div class="card-img-top">
-                <% image_path = tour.image.attached? ? tour.display_image : "default_tour_image.png" %>
-                <%= image_tag image_path , class:"tour_image" %>
+            <%= link_to tour do %>
+              <div class="card" style="margin-bottom: 15px">
+                <div class="card-img-top">
+                  <% image_path = tour.image.attached? ? tour.display_image : "default_tour_image.png" %>
+                  <%= image_tag image_path , class:"tour_image" %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text_color"><%= tour.name %></h5>
+                  <p class="card-text text_color1"><%= tour.duration %></p>
+                  <span class="vcolor-info">
+                    <%= tour.price %>
+                    <small class="textCurrency">VND</small>
+                  </span>
+                </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title"><%= tour.name %></h5>
-                <p class="card-text"><%= tour.duration %></p>
-                <span class="vcolor-info">
-                  <%= tour.price %>
-                  <small class="textCurrency">VND</small>
-                </span>
-              </div>
-            </div>
+            <% end %>
           </div>
         <% end %>
       </div>
