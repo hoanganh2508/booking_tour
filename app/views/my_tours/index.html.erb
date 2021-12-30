@@ -1,0 +1,69 @@
+<% provide(:title, current_user.name) %>
+<div class="background_color">
+  <div class="container dashbroad-padding">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'shared/sidebar', user: current_user %>
+      </div>
+      <div class="col-md-9">
+        <div class="mat-drawer-inner-container">
+          <div class="content-wrapper" style="min-height: 457px;">
+            <div class="container" style="padding-left: 90px;padding-right: 90px;">
+              <div class="localHeadLine hasLine text_color">
+                <h1 class="text_color">
+                  Các tour đã đặt
+                </h1>
+              </div>
+              <div class="row">
+                <% @user_tours.each do |user_tour|%>
+                  <div class="col-12">
+                    <div class="card flex-row flex-wrap cardContent" style="margin-bottom: 15px">
+                      <div class="img_box">
+                          <% image_path = user_tour.tour.image.attached? ? user_tour.tour.display_image : "default_tour_image.png" %>
+                          <%= image_tag image_path , class:"user-tour-image" %>
+                        <div style="margin: 15px 5%;">
+                        </div>
+                      </div>
+                      <div class="text_box" style="padding-left: 15px">
+                        <div class="textFix">
+                          <%= user_tour.tour.name %>
+                        </div>
+                        <div class="textDuration">
+                          <%= user_tour.tour.duration %>
+                        </div>
+                        <div style="color: #F79321;">
+                          <i class="fa-solid fa-star same"></i>
+                          <i class="fa-solid fa-star same"></i>
+                          <i class="fa-solid fa-star same"></i>
+                          <i class="fa-solid fa-star same"></i>
+                        </div>
+                        <div class="hotelItemReviews" style="margin-top: 10px;">
+                          <span class="review-score">9.3</span>
+                          <strong class="review-text">Tuyệt vời</strong>
+                        </div>
+                        <div class="time_box">
+                        <div class="textPrice">
+                          <span style="font-size: 17px"><%= user_tour.created_at.strftime("%Y %m %d : %H:%M") %></span>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="price_box">
+                        <div class="textPrice">
+                          <span><%= user_tour.tour.price %></span>
+                          <span style="font-size: 17px">VNĐ</span>
+                        </div>
+                        <div class="active-tour">
+                          <%= user_tour.status == "wait" ? "Đang chờ duyệt" : "Đã duyệt" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

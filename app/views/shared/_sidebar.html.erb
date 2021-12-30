@@ -1,0 +1,25 @@
+<div class="mat-sidenav-content">
+  <div class="user-navigation">
+    <div class="user-navigation-wrap">
+      <div class="circleUserProgress">
+        <div class="img-wrapper">
+          <div class="img-circle ng-star-inserted"><%= image_tag user.display_image if user.image.attached? %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-info">
+    <p class="user-name"><%= user.name %></p>
+  </div>
+  <ul class="user-vertical-menu" style="padding-left:0 !important;">
+    <% if current_user == user %>
+      <li>
+        <%= link_to "Đơn hàng của tôi", my_tours_path %>
+      </li>
+    <% end %>
+    <li class="user-vertical-menu-profile">
+        <%= link_to "Hồ sơ của tôi", user %>
+    </li>
+  </ul>
+</div>
