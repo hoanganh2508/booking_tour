@@ -311,6 +311,77 @@ body {
   height: 230px;
   margin-bottom: 10px;
 }
+.background_color {
+    background-color: #f9fbfc !important;
+}
+.user-navigation {
+    padding-bottom: 15px;
+}
+.mat-sidenav-content {
+    background-color: #fff;
+}
+.user-navigation-wrap {
+    padding-top: 30px;
+}
+.circleUserProgress {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+}
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    border-radius: 50%;
+}
+.user-info {
+    text-align: center;
+    padding-top: 16px;
+    line-height: 16px;
+    padding-bottom: 15px;
+}
+.user-name {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: HelveticaNeueBold;
+}
+.user-vertical-menu li {
+    font-weight: 500;
+    line-height: 50px;
+    list-style-type: none;
+    border-bottom: 1px solid #bdbdbd;
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 15px;
+    list-style: none;
+}
+.dashbroad-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.mat-drawer-inner-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+.user-content {
+    padding-right: 12px!important;
+    padding-left: 12px!important;
+    overflow: hidden;
+}
+.user-profile {
+    padding-top: 30px;
+}
+.user-img {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.profile-all {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 .img_box {
   width: 30%;
   height: 230px;
@@ -344,4 +415,11 @@ body {
 .textPrice {
   color: #00abc5;
   font-size: 25px;
+}
+.user-tour-image {
+    width: 100%;
+    height: 230px;
+}
+.user-vertical-menu .user-vertical-menu-profile {
+    border-bottom: none !important;
 }

@@ -14,7 +14,15 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :user_tours
+
   scope :activated_user, -> {where(activated: true)}
+
+  has_one_attached :image
+
+  def display_image
+    image.variant(resize_to_limit: [100, 120])
+  end
 
   def remember
     self.remember_token = User.new_token

@@ -1,29 +1,53 @@
-<% provide(:title, @user.name) %>
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" <%= gravatar_for @user %><span class="font-weight-bold"><%= @user.name %></span><span class="text-black-50"></span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile</h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label></div>
-                    <div><%= @user.name %></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">PhoneNumber</label></div>
-                    <div><%= @user.phone_number %></div>
-                    <div class="col-md-12"><label class="labels">Email</label></div>
-                    <div><%= @user.email %></div>
-                    <div class="col-md-12"><label class="labels">Bank Balance</label></div>
-                    <div><%= @user.bank_balance %></div>
+<body class="background_color">
+    <div class="container dashbroad-padding">
+        <div class="row">
+            <div class="col-md-3">
+                <%= render 'shared/sidebar', user: @user %>
+            </div>
+            <div class="col-md-9" style="transform: none; visibility: visible;">
+                <div class="mat-drawer-inner-container">
+                    <div class="user-content dashboard-padding">
+                        <div class="col-md-12 user-profile">
+                            <div class="col-md-12 user-img">
+                                <%= image_tag @user.display_image if @user.image.attached? %>
+                            </div>
+
+                            <div class="row profile-all">
+                                <div class="col-md-3">
+                                    Tên đầy đủ:
+                                </div>
+                                <div class="col-md-9">
+                                    <%= @user.name %>
+                                </div>
+                            </div>
+                            <div class="row profile-all">
+                                <div class="col-md-3">
+                                    Số điện thoại:
+                                </div>
+                                <div class="col-md-9">
+                                    <%= @user.phone_number %>
+                                </div>
+                            </div>
+                            <div class="row profile-all">
+                                <div class="col-md-3">
+                                    Email:
+                                </div>
+                                <div class="col-md-9">
+                                    <%= @user.email %>
+                                </div>
+                            </div>
+                            <div class="row profile-all">
+                                <div class="col-md-3">
+                                    Bank Balance:
+                                </div>
+                                <div class="col-md-9">
+                                    <%= @user.bank_balance %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
+</body>
