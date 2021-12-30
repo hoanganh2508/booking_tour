@@ -1,0 +1,30 @@
+<div class="pb-3 pt-3">
+  <div class="review_user_avatar">
+    <%= link_to review.user do %>
+      <%= gravatar_for review.user %>
+    <% end %>
+    <span class="ms-2 <%= current_user == review.user ? "color_red" : "" %>">
+      <%= link_to current_user == review.user ? "You" : review.user.name, user_path(review.user) %>
+    </span>
+  </div>
+  <div class="mt-3">
+    <%= review.content %>
+    <div>
+      <%= review.created_at %>
+    </div>
+  </div>
+  <div class="btn btn-info mt-2">
+    <a href="" class="color_white">Comment</a>
+  </div>
+  <div class="btn btn-danger mt-2">
+    <% if current_user == review.user || current_user.admin? %>
+      <%= link_to "Xoá", tour_review_path(tour_id: @tour.id, id: review.id), method: :delete,
+                                                                             data: { confirm: "You want to delete review?" } ,
+                                                                             class:"color_white" %>
+    <% end %>
+  </div>
+  <div class="<%= current_user == review.user ? "btn btn-info mt-2" : "" %>">
+    <%= link_to current_user == review.user ? "Sửa" : "", edit_tour_review_path(tour_id: @tour.id, id: review.id), class:"color_white" %>
+  </div>
+  <hr>
+</div>

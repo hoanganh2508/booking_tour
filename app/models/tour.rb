@@ -6,6 +6,7 @@ class Tour < ApplicationRecord
   validates :content, presence: true, length: { maximum: 5000 }
 
   belongs_to :category
+  has_many :reviews
   has_one_attached :image
 
   scope :same_location, -> (location) {where("address LIKE ?", "%#{location}%")}
