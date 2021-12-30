@@ -422,4 +422,20 @@ body {
 }
 .user-vertical-menu .user-vertical-menu-profile {
     border-bottom: none !important;
+.review_user_avatar .gravatar {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+.color_red {
+  a {
+    color: red;
+  }
+}
+.color_white {
+  color: #fff;
+}
+.button-create-review {
+  margin-top: 15px;
+  margin-bottom: -20px
 }

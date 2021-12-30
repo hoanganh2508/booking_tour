@@ -122,7 +122,12 @@
             </h4>
           </div>
         </div>
-
+      </div>
+      <%= link_to "Create review", new_tour_review_path(@tour) , class:"btn btn-primary button-create-review" %>
+      <div class="card mt-5 p-5" style="background-color: #ecf0f4">
+        <%= @reviews.count %> reviews
+        <%= render @reviews %>
+        <%= will_paginate @reviews, class:"digg_pagination"%>
       </div>
     </div>
   </div>
