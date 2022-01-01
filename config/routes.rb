@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :tours
     resources :categories
     resources :users
+    resources :user_tours
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,39 @@
+<h1>All Booking Tours</h1>
+<div class="line">
+
+</div>
+<%= will_paginate %>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Tên Tour</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Yêu cầu khác</th>
+        <th>Giá tiền</th>
+        <th>Xoá</th>
+        <th>Xác nhận</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_tours.each_with_index do |user_tour, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= user_tour.name %></td>
+          <td><%= user_tour.tour.name %></td>
+          <td><%= user_tour.phone_number %></td>
+          <td><%= user_tour.email %></td>
+          <td><%= user_tour.other_requirement %></td>
+          <td><%= user_tour.price %>VNĐ</td>
+          <td><%= link_to "delete", [:admin, user_tour], method: :delete,
+                                          data: { confirm: "You sure?" } %></td>
+          <td><%= link_to user_tour.status, [:admin, user_tour], method: :put,
+                                          class:"btn btn-primary"%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate %>
