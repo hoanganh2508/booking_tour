@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :reviews
-
+  has_many :user_like_tours
+  has_many :liked_tours, through: :user_like_tours, source: :tour
   has_many :user_tours
 
   scope :activated_user, -> {where(activated: true)}
