@@ -9,14 +9,14 @@ class UserLikeToursController < ApplicationController
   end
 
   def destroy
-    @userliketour = UserLikeTour.find_by(params[:id]).destroy
+    @userliketour = UserLikeTour.find_by(id: params[:id]).destroy
     redirect_to category_path(@tour.category)
   end
 
   private
 
   def set_tour
-    @tour = Tour.find_by id: params[:tour_id]
+    @tour = Tour.find_by(id: params[:tour_id])
     redirect_to tours_path unless @tour
   end
 end
