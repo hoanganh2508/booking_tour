@@ -28,10 +28,26 @@
                 <i class="fa-solid fa-star same"></i>
                 <i class="fa-solid fa-star same"></i>
               </div>
-              <div class="hotelItemReviews" style="margin-top: 10px;">
+              <div class="hotelItemReviews mt-2">
                 <span class="review-score">9.3</span>
                 <strong class="review-text">Tuyệt vời</strong>
               </div>
+              <% if current_user.liked_tours.include?(tour) %>
+              <span class="like-color">
+                <i class="fa-solid fa-heart mt-3"></i>
+                <%= tour.user_like_tours.count %>
+                Lượt Thích
+              </span>
+                <%= link_to tour_user_like_tour_path(tour_id: tour.id, id: current_user.user_like_tours.find_by(tour_id: tour.id).id), method: :delete do %>
+                  <i class="fa-solid fa-heart mt-3"></i>
+                  Bỏ thích
+                <% end %>
+              <% else %>
+                <%= link_to tour_user_like_tours_path(tour_id: tour.id), method: :post do %>
+                  <i class="fa-solid fa-heart mt-3"></i>
+                  Thích
+                <% end %>
+              <% end %>
             </div>
             <div class="price_box">
               <div class="textPrice">
