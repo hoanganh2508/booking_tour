@@ -13,10 +13,12 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   has_secure_password
+
   has_many :reviews
   has_many :user_like_tours
   has_many :liked_tours, through: :user_like_tours, source: :tour
   has_many :user_tours
+  has_many :comments
 
   scope :activated_user, -> {where(activated: true)}
 

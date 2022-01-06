@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :my_tours
+  resources :comments, only: [:create, :destroy]
 
   namespace :admin do
     root "dash_board#index"
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :users
     resources :user_tours
+
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
