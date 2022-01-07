@@ -13,8 +13,8 @@
       <%= review.created_at %>
     </div>
   </div>
-  <div class="btn btn-info mt-2">
-    <a href="" class="color_white">Comment</a>
+  <div class="btn btn-info mt-2 show-comment color_white">
+    Comment
   </div>
   <div class="btn btn-danger mt-2">
     <% if current_user == review.user || current_user.admin? %>
@@ -27,4 +27,29 @@
     <%= link_to current_user == review.user ? "Sửa" : "", edit_tour_review_path(tour_id: @tour.id, id: review.id), class:"color_white" %>
   </div>
   <hr>
+  <div>
+    <% review.comments.each do |comment|%>
+      <%= link_to review.user do %>
+        <div class="comment_user_image"><%= image_tag review.user.display_image if review.user.image.attached? %>
+          <span style="padding: 5px;"><%= review.user.name %></span>
+        </div>
+      <% end %>
+
+      <div class="container-fluid">
+        <div class="row" style="flex-wrap: inherit">
+          <div class="col-md-8 comment_user_content">
+            <%= comment.content %>
+          </div>
+          <div class="col-md-4 comment_user_time">
+            <%= comment.created_at.time.to_formatted_s(:long) %>
+            <span class="btn btn-danger delete_comment">
+              <%= link_to "Xóa" ,comment_path(comment), method: :delete,
+                                                        data: { confirm: "You want to delete comment?"} %>
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div><%= render 'shared/comment', review_id: review.id %></div>
 </div>

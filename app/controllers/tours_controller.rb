@@ -9,6 +9,7 @@ class ToursController < ApplicationController
     @same_tours = Tour.same_location(@tour.address)
     @reviews = @tour.reviews.order(created_at: :desc)
                     .paginate(page: params[:page], per_page: 5)
+    @comment = Comment.new
   end
 
   private

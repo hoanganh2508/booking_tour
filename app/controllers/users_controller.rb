@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user , only: [:show, :edit, :update, :correct_user]
   before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
+
   def index
     @users = User.activated_user.paginate(page: params[:page])
   end
