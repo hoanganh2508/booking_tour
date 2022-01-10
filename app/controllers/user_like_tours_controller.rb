@@ -5,12 +5,16 @@ class UserLikeToursController < ApplicationController
     @userliketour = current_user.user_like_tours.new
     @userliketour.tour_id = @tour.id
     @userliketour.save
-    redirect_to category_path(@tour.category)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     @userliketour = UserLikeTour.find_by(id: params[:id]).destroy
-    redirect_to category_path(@tour.category)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

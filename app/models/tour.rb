@@ -8,6 +8,7 @@ class Tour < ApplicationRecord
   belongs_to :category
   has_many :reviews
   has_many :user_like_tours
+  has_many :user_rating_tours
   has_one_attached :image
 
   scope :same_location, -> (location) {where("address LIKE ?", "%#{location}%")}

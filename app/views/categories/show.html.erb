@@ -22,32 +22,23 @@
               <div class="textDuration">
                 <%= tour.duration %>
               </div>
-              <div style="color: #F79321;">
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
+              <div id="rating-rated">
+                <% if tour.user_rating_tours.find_by(user_id: current_user.id).present? %>
+                  <%= render 'user_rating_tours/rated', tour: tour %>
+                <% else %>
+                  <%= render 'user_rating_tours/rating', tour: tour %>
+                <% end %>
               </div>
-              <div class="hotelItemReviews mt-2">
-                <span class="review-score">9.3</span>
-                <strong class="review-text">Tuyệt vời</strong>
-              </div>
-              <% if current_user.liked_tours.include?(tour) %>
-              <span class="like-color">
-                <i class="fa-solid fa-heart mt-3"></i>
-                <%= tour.user_like_tours.count %>
-                Lượt Thích
+              <span class="like-color" id="like-count-<%= tour.id %>">
+                <%= render 'user_like_tours/count', tour: tour  %>
               </span>
-                <%= link_to tour_user_like_tour_path(tour_id: tour.id, id: current_user.user_like_tours.find_by(tour_id: tour.id).id), method: :delete do %>
-                  <i class="fa-solid fa-heart mt-3"></i>
-                  Bỏ thích
+              <div id="like-unlike-<%= tour.id %>">
+                <% if current_user.liked_tours.include?(tour) %>
+                  <%= render 'user_like_tours/unlike', tour: tour %>
+                <% else %>
+                  <%= render 'user_like_tours/like', tour: tour %>
                 <% end %>
-              <% else %>
-                <%= link_to tour_user_like_tours_path(tour_id: tour.id), method: :post do %>
-                  <i class="fa-solid fa-heart mt-3"></i>
-                  Thích
-                <% end %>
-              <% end %>
+              </div>
             </div>
             <div class="price_box">
               <div class="textPrice">
@@ -61,3 +52,10 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('#form-rating input:radio').click(function() {
+    $(this).closest('form').find(".submit_button").click()
+  });
+</script>
+

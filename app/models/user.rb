@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :user_like_tours
+  has_many :user_rating_tours
   has_many :liked_tours, through: :user_like_tours, source: :tour
   has_many :user_tours
   has_many :comments
