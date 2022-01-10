@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tours do
     resources :reviews
     resources :user_like_tours
+    resources :user_rating_tours
   end
   resources :categories
   resources :users

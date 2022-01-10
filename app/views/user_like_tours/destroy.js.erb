@@ -1,0 +1,2 @@
+$("#like-unlike-<%= @tour.id %>").html("<%= escape_javascript(render('user_like_tours/like', tour: @tour)) %>");
+$("#like-count-<%= @tour.id %>").html("<%= escape_javascript(render('user_like_tours/count', tour: @tour)) %>");

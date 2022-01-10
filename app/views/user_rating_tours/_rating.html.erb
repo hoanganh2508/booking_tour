@@ -1,0 +1,13 @@
+<%= form_tag tour_user_rating_tours_path(tour_id: tour.id), method: :post, remote: true, class: 'd-flex align-items-center w-50', id:'form-rating' do %>
+  <%= radio_button_tag "user_rating_tour[rate]", "1", false, class: 'form-check-input d-none' %>
+  <%= label_tag "user_rating_tour[rate]_1", '☆', value: '1', class: 'fix-star' %>
+  <%= radio_button_tag "user_rating_tour[rate]", "2", false, class: 'form-check-input d-none' %>
+  <%= label_tag "user_rating_tour[rate]_2", '☆', value: '2', class: 'fix-star' %>
+  <%= radio_button_tag "user_rating_tour[rate]", "3", false, class: 'form-check-input d-none' %>
+  <%= label_tag "user_rating_tour[rate]_3", '☆', value: '3', class: 'fix-star' %>
+  <%= radio_button_tag "user_rating_tour[rate]", "4", false, class: 'form-check-input d-none' %>
+  <%= label_tag "user_rating_tour[rate]_4", '☆', value: '4', class: 'fix-star' %>
+  <%= radio_button_tag "user_rating_tour[rate]", "5", false, class: 'form-check-input d-none' %>
+  <%= label_tag "user_rating_tour[rate]_5", '☆', value: '5', class: 'fix-star' %>
+  <%= submit_tag 'Đánh Giá', class: "d-none submit_button" %>
+<% end %>

@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+import jquery from 'jquery';
+window.$ = window.jquery = jquery;
 
 import "../stylesheets/application";
 document.addEventListener("turbolinks:load", function() {
@@ -24,6 +25,5 @@ require("bootstrap")
 
 import "./user/bootstrap.bundle.min"
 // import "./popper.min"
-import "./user/plugin"
 import "./user/jquery.mCustomScrollbar.concat.min"
 import "./user/custom"

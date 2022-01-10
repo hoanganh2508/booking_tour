@@ -440,23 +440,32 @@ body {
   margin-top: 15px;
   margin-bottom: -20px
 }
-
 .like-color {
   color: red;
 }
-.comment_user {
-
-}
 .comment_user_image img {
-    border-radius: 10px;
-    width: 40px;
+  border-radius: 10px;
+  width: 40px;
 }
 .comment_user_content {
-    margin-top: 10px !important;
-    margin-bottom: 10px;
-    margin-left: 25px;
+  margin-top: 10px !important;
+  margin-bottom: 10px;
+  margin-left: 25px;
 }
 .comment_user_time {
-    margin-top: 15px !important;
-    font-size: 12px;
+  margin-top: 15px !important;
+  font-size: 12px;
+}
+.form-check-input {
+  height: 1em !important;
+}
+.fa-star {
+  color: #F79321;
+}
+.fix-star {
+  font-size: 25px;
+}
+.fix-star:hover {
+  color: #F79321;
+  cursor: pointer;
 }
