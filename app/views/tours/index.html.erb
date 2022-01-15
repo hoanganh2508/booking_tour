@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="row">
-        <% category.tours.limit(6).each do |tour|%>
+        <% @tours.limit(6).each do |tour|%>
           <div class="col-md-4">
             <%= link_to tour do %>
               <div class="card" style="margin-bottom: 15px">

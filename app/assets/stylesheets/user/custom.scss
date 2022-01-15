@@ -469,3 +469,39 @@ body {
   color: #F79321;
   cursor: pointer;
 }
+.form-search {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 45%;
+  display: none;
+}
+.main-menu ul > li span {
+  line-height: 20px;
+  font-size: 16px;
+  display: block;
+  font-weight: 500;
+  color: #fff;
+  padding: 15px 26px;
+  padding-top: 24px;
+  cursor: pointer;
+}
+.main-menu ul > li span:hover {
+  color: black;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.search-homepage {
+  background: #ee580f;
+  color: #fff;
+  float: left;
+  font-size: 15px;
+  font-weight: 400;
+  border: solid #ee580f 1px;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 75px;
+}

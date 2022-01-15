@@ -15,4 +15,12 @@ class Tour < ApplicationRecord
   def display_image
     image.variant(resize_to_limit: [80, 90])
   end
+
+  def self.search(search)
+    if search
+      where("name like ?", "%#{search}%")
+    else
+      all
+    end
+  end
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :user_like_tours
     resources :user_rating_tours
   end
+  resources :search_tours, only: [:index]
   resources :categories
   resources :users
   resources :account_activations, only: [:edit]

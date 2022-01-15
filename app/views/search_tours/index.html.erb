@@ -1,0 +1,27 @@
+<div class="content-wrapper" style="min-height: 457px; background-color: #ecf0f4">
+  <div class="container" style="padding-left: 90px;padding-right: 90px;">
+    <div class="row mt-3">
+      <% @tours.each do |tour|%>
+        <div class="col-md-4">
+          <%= link_to tour do %>
+            <div class="card" style="margin-bottom: 15px">
+              <div class="card-img-top">
+                <% image_path = tour.image.attached? ? tour.display_image : "default_tour_image.png" %>
+                <%= image_tag image_path , class:"tour_image" %>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text_color"><%= tour.name %></h5>
+                <p class="card-text text_color1"><%= tour.category.name %></p>
+                <p class="card-text text_color1"><%= tour.duration %></p>
+                <span class="vcolor-info">
+                  <%= tour.price %>
+                  <small class="textCurrency">VND</small>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
