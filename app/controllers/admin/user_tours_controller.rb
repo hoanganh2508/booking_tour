@@ -3,6 +3,7 @@ class Admin::UserToursController < Admin::AdminController
 
   def index
     @user_tours = UserTour.all.paginate(page: params[:page])
+    @tours = UserTour.by_dates(Date.today - 1.month, Date.today)
   end
 
   def destroy
