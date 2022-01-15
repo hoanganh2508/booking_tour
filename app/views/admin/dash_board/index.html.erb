@@ -3,12 +3,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Dashboard v3</h1>
+        <h1 class="m-0">Dashboard</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><%= link_to "Log out", logout_path, method: :delete %></li>
-          <li class="breadcrumb-item active">Dashboard v3</li>
+          <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -20,142 +20,93 @@
 <div class="content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header border-0">
-            <div class="d-flex justify-content-between">
-              <h3 class="card-title">Online Store Visitors</h3>
-              <a href="javascript:void(0);">View Report</a>
-            </div>
+      <div class="col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3><%= @user_tours.count %></h3>
+
+            <p>Tổng số lượng order trong 1 tháng</p>
           </div>
-          <div class="card-body">
-            <div class="d-flex">
-              <p class="d-flex flex-column">
-                <span class="text-bold text-lg">820</span>
-                <span>Visitors Over Time</span>
-              </p>
-              <p class="ml-auto d-flex flex-column text-right">
-                <span class="text-success">
-                  <i class="fas fa-arrow-up"></i> 12.5%
-                </span>
-                <span class="text-muted">Since last week</span>
-              </p>
-            </div>
-            <!-- /.d-flex -->
-
-            <div class="position-relative mb-4">
-              <canvas id="visitors-chart" height="200"></canvas>
-            </div>
-
-            <div class="d-flex flex-row justify-content-end">
-              <span class="mr-2">
-                <i class="fas fa-square text-primary"></i> This Week
-              </span>
-
-              <span>
-                <i class="fas fa-square text-gray"></i> Last Week
-              </span>
-            </div>
+          <div class="icon">
+            <i class="ion ion-bag"></i>
           </div>
+          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-      <!-- /.col-md-6 -->
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-header border-0">
-            <div class="d-flex justify-content-between">
-              <h3 class="card-title">Sales</h3>
-              <a href="javascript:void(0);">View Report</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="d-flex">
-              <p class="d-flex flex-column">
-                <span class="text-bold text-lg">$18,230.00</span>
-                <span>Sales Over Time</span>
-              </p>
-              <p class="ml-auto d-flex flex-column text-right">
-                <span class="text-success">
-                  <i class="fas fa-arrow-up"></i> 33.1%
-                </span>
-                <span class="text-muted">Since last month</span>
-              </p>
-            </div>
-            <!-- /.d-flex -->
+      <!-- ./col -->
+      <div class="col-md-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3><%= @user_tours.pluck(:price).sum %><sup style="font-size: 20px">VNĐ</sup></h3>
 
-            <div class="position-relative mb-4">
-              <canvas id="sales-chart" height="200"></canvas>
-            </div>
-
-            <div class="d-flex flex-row justify-content-end">
-              <span class="mr-2">
-                <i class="fas fa-square text-primary"></i> This year
-              </span>
-
-              <span>
-                <i class="fas fa-square text-gray"></i> Last year
-              </span>
-            </div>
+            <p>Tổng số tiền các tour đã đặt trong 1 tháng</p>
           </div>
-        </div>
-        <!-- /.card -->
-
-        <div class="card">
-          <div class="card-header border-0">
-            <h3 class="card-title">Online Store Overview</h3>
-            <div class="card-tools">
-              <a href="#" class="btn btn-sm btn-tool">
-                <i class="fas fa-download"></i>
-              </a>
-              <a href="#" class="btn btn-sm btn-tool">
-                <i class="fas fa-bars"></i>
-              </a>
-            </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
           </div>
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-              <p class="text-success text-xl">
-                <i class="ion ion-ios-refresh-empty"></i>
-              </p>
-              <p class="d-flex flex-column text-right">
-                <span class="font-weight-bold">
-                  <i class="ion ion-android-arrow-up text-success"></i> 12%
-                </span>
-                <span class="text-muted">CONVERSION RATE</span>
-              </p>
-            </div>
-            <!-- /.d-flex -->
-            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-              <p class="text-warning text-xl">
-                <i class="ion ion-ios-cart-outline"></i>
-              </p>
-              <p class="d-flex flex-column text-right">
-                <span class="font-weight-bold">
-                  <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                </span>
-                <span class="text-muted">SALES RATE</span>
-              </p>
-            </div>
-            <!-- /.d-flex -->
-            <div class="d-flex justify-content-between align-items-center mb-0">
-              <p class="text-danger text-xl">
-                <i class="ion ion-ios-people-outline"></i>
-              </p>
-              <p class="d-flex flex-column text-right">
-                <span class="font-weight-bold">
-                  <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                </span>
-                <span class="text-muted">REGISTRATION RATE</span>
-              </p>
-            </div>
-            <!-- /.d-flex -->
-          </div>
+          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-      <!-- /.col-md-6 -->
+    </div>
+
+    <div class="card">
+      <div class="card-header border-transparent">
+        <h3 class="card-title">Tour đã đặt của tháng <%= Date.today.strftime("%m") %>/<%= Date.today.strftime("%Y") %></h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table m-0">
+            <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Tên Tour</th>
+              <th>Trạng thái</th>
+              <th>Giá tiền</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @user_tours.each do |user_tour| %>
+            <tr>
+              <td><a href="pages/examples/invoice.html"><%= user_tour.tour.id %></a></td>
+              <td><%= user_tour.tour.name %></td>
+              <td><span class="badge badge-success"><%= user_tour.status %></span></td>
+              <td>
+                <div class="sparkbar" data-color="#00a65a" data-height="20"><%= user_tour.tour.price %> VNĐ</div>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.table-responsive -->
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer clearfix">
+        <%= form_tag admin_root_path, method: :get do %>
+          <%= select_tag(:option, options_for_select([["Tháng 1",1],["Tháng 2",2],["Tháng 3",3],["Tháng 4",4],["Tháng 5",5],["Tháng 6",6],["Tháng 7",7],["Tháng 8",8],["Tháng 9",9],["Tháng 10",10],["Tháng 11",11],["Tháng 12",12]], params[:option] ), class:"select") %>
+          <%= submit_tag "aaa", class: "select_button d-none" %>
+        <% end %>
+        <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+      </div>
+      <!-- /.card-footer -->
     </div>
     <!-- /.row -->
   </div>
   <!-- /.container-fluid -->
 </div>
+
+<script>
+  $('.select').change(function() {
+    $(this).parent().find(".select_button").click()
+  })
+</script>
 
