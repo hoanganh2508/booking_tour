@@ -2,6 +2,7 @@ class ToursController < ApplicationController
   before_action :find_tour , only: [:show]
   def index
     @categories = Category.all
+    @tours = Tour.all
   end
 
   def show
