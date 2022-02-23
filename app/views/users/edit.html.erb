@@ -9,17 +9,17 @@
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Settings</h4>
+                    <h4 class="text-right">Thông tin thành viên</h4>
                 </div>
                 <%= form_for(@user) do |f| %>
                 <div class="row mt-2">
-                    <div class="col-md-12"><%= f.label :name %><%= f.text_field :name, class: 'form-control' %></div>
+                    <div class="col-md-12"><%= f.label "Tên" %><%= f.text_field :name, class: 'form-control' %></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><%= f.label :email %><%= f.email_field :email, class: 'form-control' %></div>
-                    <div class="col-md-12"><%= f.label :phone_number %><%= f.text_field :phone_number, class: 'form-control' %></div>
-                    <div class="col-md-12"><%= f.label :password %><%= f.password_field :password, class: 'form-control' %></div>
-                    <div class="col-md-12"><%= f.label :password_confirmation %><%= f.password_field :password_confirmation, class: 'form-control' %></div>
+                    <div class="col-md-12"><%= f.label "Email" %><%= f.email_field :email, class: 'form-control' %></div>
+                    <div class="col-md-12"><%= f.label "Số điện thoại" %><%= f.text_field :phone_number, class: 'form-control' %></div>
+                    <div class="col-md-12"><%= f.label "Mật khẩu" %><%= f.password_field :password, class: 'form-control' %></div>
+                    <div class="col-md-12"><%= f.label "Xác nhận lại mật khẩu" %><%= f.password_field :password_confirmation, class: 'form-control' %></div>
                 </div>
                 <%= f.submit yield(:button_text), class: "mt-5 text-center" %>
                     <span class="image">
