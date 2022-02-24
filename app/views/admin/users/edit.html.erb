@@ -1,28 +1,28 @@
-<h1>Update user</h1>
+<h1>Cập nhật thông tin thành viên</h1>
 <div>
   <div class="row">
     <div class="col-md-6 offset-3">
       <%= form_for([:admin, @user]) do |f| %>
 
-        <%= f.label :name %>
+        <%= f.label "Tên" %>
         <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :phone_number %>
+        <%= f.label "Số điện thoại" %>
         <%= f.number_field :phone_number, class: 'form-control' %>
 
-        <%= f.label :email %>
+        <%= f.label "email" %>
         <%= f.text_field :email, class: 'form-control' %>
 
-        <%= f.label :bank_balance %>
+        <%= f.label "Số tiền trong tài khoản" %>
         <%= f.text_field :bank_balance, class: 'form-control' %>
 
-        <%= f.label :password %>
+        <%= f.label "Mật khẩu" %>
         <%= f.password_field :password, class: 'form-control' %>
 
-        <%= f.label :password_confirmation %>
+        <%= f.label "Xác nhận mật khẩu" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
         <br>
-        <%= f.submit "Update user", class: "btn btn-primary" %>
+        <%= f.submit "Cập nhật thông tin thành viên", class: "btn btn-primary" %>
         <% end %>
     </div>
   </div>

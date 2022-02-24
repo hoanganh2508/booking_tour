@@ -3,12 +3,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Dashboard</h1>
+        <h1 class="m-0">Bảng điều khiển</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><%= link_to "Log out", logout_path, method: :delete %></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item"><%= link_to "Đăng xuất", logout_path, method: :delete %></li>
+          <li class="breadcrumb-item active">Bảng điều khiển</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -26,12 +26,12 @@
           <div class="inner">
             <h3><%= @user_tours.count %></h3>
 
-            <p>Tổng số lượng order trong 1 tháng</p>
+            <p>Tổng số lượng đã đặt trong 1 tháng</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="#" class="small-box-footer">xem thêm <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -41,19 +41,23 @@
           <div class="inner">
             <h3><%= @user_tours.pluck(:price).sum %><sup style="font-size: 20px">VNĐ</sup></h3>
 
-            <p>Tổng số tiền các tour đã đặt trong 1 tháng</p>
+            <p>Tổng số tiền các chuyến du lịch đã đặt trong 1 tháng</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="#" class="small-box-footer">Xem thêm <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header border-transparent">
+<<<<<<< HEAD
         <h3 class="card-title">Tour đã đặt của tháng <%= params[:option] %>/<%= Date.today.strftime("%Y") %></h3>
+=======
+        <h3 class="card-title">Chuyến du lịch đã đặt của tháng <%= Date.today.strftime("%m") %>/<%= Date.today.strftime("%Y") %></h3>
+>>>>>>> ad84140... fix
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -67,8 +71,8 @@
           <table class="table m-0">
             <thead>
             <tr>
-              <th>Order ID</th>
-              <th>Tên Tour</th>
+              <th>Mã chuyến du lịch đã đặt</th>
+              <th>Tên chuyến du lịch</th>
               <th>Trạng thái</th>
               <th>Giá tiền</th>
             </tr>

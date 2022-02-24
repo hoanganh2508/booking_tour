@@ -23,6 +23,13 @@
                 <div class="card-body">
                   <h5 class="card-title text_color"><%= tour.name %></h5>
                   <p class="card-text text_color1"><%= tour.duration %></p>
+                  <div id="rating-rated">
+              <% if @tour.user_rating_tours.find_by(user_id: current_user.id).present? %>
+                <%= render 'user_rating_tours/rated', tour: @tour %>
+              <% else %>
+                <%= render 'user_rating_tours/rating', tour: @tour %>
+              <% end %>
+            </div>
                   <span class="vcolor-info">
                     <%= tour.price %>
                     <small class="textCurrency">VND</small>

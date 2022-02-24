@@ -1,4 +1,4 @@
-<h1>All Booking Tours</h1>
+<h1>Tất cả chuyến du lịch đã đặt</h1>
 <div class="line">
 
 </div>
@@ -9,7 +9,7 @@
       <tr>
         <th>STT</th>
         <th>Tên</th>
-        <th>Tên Tour</th>
+        <th>Tên chuyến du lịch</th>
         <th>Số điện thoại</th>
         <th>Email</th>
         <th>Yêu cầu khác</th>
@@ -28,8 +28,8 @@
           <td><%= user_tour.email %></td>
           <td><%= user_tour.other_requirement %></td>
           <td><%= user_tour.price %>VNĐ</td>
-          <td><%= link_to "delete", [:admin, user_tour], method: :delete,
-                                          data: { confirm: "You sure?" } %></td>
+          <td><%= link_to "Xoá", [:admin, user_tour], method: :delete,
+                                          data: { confirm: "Bạn có muốn xoá không?" } %></td>
           <td><%= link_to user_tour.status, [:admin, user_tour], method: :put,
                                           class:"btn btn-primary"%></td>
         </tr>
