@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :find_tour , only: [:show]
+  before_action :logged_in_user, only: [:show]
   def index
     @categories = Category.all
     @tours = Tour.all

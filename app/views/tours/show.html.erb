@@ -10,28 +10,23 @@
         <div class="col-sm-12">
           <div class="horizontalLine2"></div>
         </div>
-        <div class="col-sm-12">
-          <div class="media">
-            <span class="media-left">
-              <% image_path = @tour.image.attached? ? @tour.display_image : "default_tour_image.png" %>
-              <%= image_tag image_path , class:"image-rounded" %>
-            </span>
-            <div class="media-body">
-              <h4><%= @tour.name %>
-              </h4>
-              <div class="col-sm-12" style="margin-bottom: 10px;">
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
-                <i class="fa-solid fa-star same"></i>
-              </div>
-              <div class="col-sm-12 hotelItemReviews">
-                <span class="review-score">9.3</span>
-                <strong class="review-text">Tuyệt vời</strong>
+        <% @same_tours.each do |same_tour| %>
+          <div class="col-sm-12">
+            <div class="media">
+              <span class="media-left">
+                <% image_path = same_tour.image.attached? ? same_tour.display_image : "default_tour_image.png" %>
+                <%= image_tag image_path , class:"image-rounded" %>
+              </span>
+              <div class="media-body">
+                <h4><%= same_tour.name %>
+                </h4>
+                <% if same_tour.user_rating_tours.find_by(user_id: current_user.id).present? %>
+                  <%= render 'user_rating_tours/rated', tour: same_tour %>
+                <% end %>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-8">
@@ -41,17 +36,13 @@
             <span class="hotel-name-detail"><%= @tour.name %></span>
           </h1>
           <div class="score-container" style="">
-            <span class="icon stars">
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-            </span>
-            <span class="score-container__inner" data-original-title="Click để xem đánh giá">
-              <span class="score">8.9</span>
-              <span class="score-description">Rất tốt</span>
-              <span>| 366 đánh giá</span>
-            </span>
+            <div id="rating-rated">
+              <% if @tour.user_rating_tours.find_by(user_id: current_user.id).present? %>
+                <%= render 'user_rating_tours/rated', tour: @tour %>
+              <% else %>
+                <%= render 'user_rating_tours/rating', tour: @tour %>
+              <% end %>
+            </div>
           </div>
           <div class="address description">
             <i class="fa-solid fa-location-dot"></i>
@@ -133,3 +124,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#form-rating input:radio').click(function() {
+    $(this).closest('form').find(".submit_button").click()
+  });
+</script>

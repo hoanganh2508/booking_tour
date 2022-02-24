@@ -1,5 +1,5 @@
-<% provide(:title, 'All users') %>
-<h1>All Users</h1>
+<% provide(:title, 'Tất cả thành viên') %>
+<h1>Tất cả thành viên</h1>
 <div class="line">
 
 </div>
@@ -14,7 +14,7 @@
         <th>Tên</th>
         <th>Số điện thoại</th>
         <th>Email</th>
-        <th>Bank Balance</th>
+        <th>Số dư trong tài khoản</th>
         <th>Xoá</th>
         <th>Sửa</th>
       </tr>
@@ -28,9 +28,9 @@
           <td><%= user.phone_number %></td>
           <td><%= user.email %></td>
           <td><%= user.bank_balance %>VNĐ</td>
-          <td><%= link_to "delete", [:admin, user], method: :delete,
-                                          data: { confirm: "You sure?" } %></td>
-          <td><%= link_to "edit", edit_admin_user_path(user) %></td>
+          <td><%= link_to "Xoá", [:admin, user], method: :delete,
+                                          data: { confirm: "Bạn có muốn xoá không?" } %></td>
+          <td><%= link_to "Sửa", edit_admin_user_path(user) %></td>
         </tr>
       <% end %>
     </tbody>

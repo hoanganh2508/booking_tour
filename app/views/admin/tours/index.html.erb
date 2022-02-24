@@ -1,10 +1,10 @@
-<h1>All Tours</h1>
+<h1>Tất cả chuyến du lịch</h1>
 <div class="line">
 
 </div>
 <%= will_paginate class:"digg_pagination"%>
   <div class="button-tour">
-    <p><%= link_to "Tạo Tour", new_admin_tour_path %></p>
+    <p><%= link_to "Tạo chuyến du lịch mới", new_admin_tour_path %></p>
   </div>
   <table class="table table-bordered">
     <thead>
@@ -30,8 +30,8 @@
           <td><%= tour.duration %></td>
           <td><%= tour.price %>vnđ</td>
           <td><%= tour.content %></td>
-          <td><%= link_to "delete", [:admin, tour], method: :delete,
-                                          data: { confirm: "You sure?" } %></td>
+          <td><%= link_to "Xoá", [:admin, tour], method: :delete,
+                                          data: { confirm: "Bạn có muốn xoá không?" } %></td>
         </tr>
       <% end %>
     </tbody>
