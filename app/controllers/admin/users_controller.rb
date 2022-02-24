@@ -1,6 +1,9 @@
 class Admin::UsersController < Admin::AdminController
   before_action :find_user, only: [:edit, :update, :destroy, :show]
 
+  def new
+    @user = User.new
+  end
 
   def index
     @users = User.all.paginate(page: params[:page])
@@ -11,9 +14,13 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def create
-    @user.create
-    flash[:success] = "Tạo tài khoản thành công"
-    redirect_to admin_users_path
+    @user = User.new user_params
+    if @user.save
+      flash[:success] = "Tạo tài khoản thành công"
+      redirect_to admin_users_path
+    else
+      render 'new'
+    end
   end
 
   def new
